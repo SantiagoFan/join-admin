@@ -1,0 +1,291 @@
+// 前台拖拽布局页 及 后台渲染效果
+.widget-wrapper{
+  .widget-list{
+    // 圆角
+    .fillet{
+      border-radius: 8px;
+    }
+    .wg-title{
+      .title-content{
+        padding: 10px;
+        word-break: break-all;
+        h2{
+          font-size: 16px;
+          font-style: normal;
+        }
+        .sub-title{
+          margin-top: 5px;
+          font-size: 12px;
+          line-height: 16px;
+          color: #999;
+        }
+      }
+    }
+    // 轮播图样式
+    .wg-banner{
+      font-size: 0;
+      .van-swipe-item{
+        overflow: hidden;
+        font-size: 0px;
+        img{
+          max-width: 100%;
+        }
+        .title{
+          width: 100%;
+          position: absolute;
+          font-size: 14px;
+          height: 30px;
+          line-height: 30px;
+          left: 0;
+          color: #fff;
+          bottom: 0px;
+          text-align: left;
+          padding-left: 5px;
+          background-color: rgba(51,51,51,.8);
+        }
+      }
+      .custom-indicator{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        padding: 2px 5px;
+        color: #fff;
+        font-size: 12px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+      .block-indicator{
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: 6px;
+        .bk{
+          width: 15px;
+          display: inline-block;
+          height: 2px;
+          margin: 0 2px;
+          background: rgba(0, 0, 0, 0.1);
+          &.on{
+            background: rgba(0, 0, 0,1);
+          }
+        }
+      }
+    }
+    // 辅助空白
+    .wg-blank{
+    }
+    // 辅助线
+    .wg-line{
+      height: 30px;
+    }
+    //产品列表
+    .wg-goodsList{
+      .goods-container{
+        overflow: hidden;
+        .goods-item{
+          width: 50%;
+          float: left;
+          // background-color: aqua;  
+          .card{
+            display:block;
+            box-sizing:border-box;
+            overflow: hidden;
+            &.style1{ // 无边白底
+              border-width: 0;
+              background-color: #fff;
+            }
+            &.style2{ // 卡片投影
+              border-width: 0;
+              background-color: #fff;
+              box-shadow : 0 2px 8px rgba(93,113,127,.08);
+              -webkit-box-shadow:0 2px 8px rgba(93,113,127,.08);
+            }
+            &.style3{ // 描边白底
+              border: 1px solid #e6e6e6;
+              background-color: #fff;
+            }
+            &.style4{ // 无边无底
+              background-color: transparent;
+              border-width: 0;
+            }
+            &.detail{
+              .goods-img{
+                float: left;
+                height: 145px;
+                width: 145px;
+              }
+              .info{
+                margin-left: 145px;
+                overflow: hidden;
+                height: 145px;
+              }
+            }
+            .goods-img{
+              font-size: 0;
+              background-color: black;
+              img{
+                width: 100%;
+              }
+            }
+            .info{
+              font-size: 14px;
+              line-height: 20px;
+              padding: 0 10px;
+              .title{
+                margin-top: 10px;
+                h3{
+                  font-size: 14px;
+                  font-weight: normal;
+                  line-height: 20px;
+                  margin-bottom: 5px;
+                  word-break: break-all;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                }
+                .sub-title{
+                  font-size: 12px;
+                  line-height: 16px;
+                  color: #999;
+                  height: 16px;
+                  word-break: break-all;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 1;
+                  -webkit-box-orient: vertical;
+                }
+              }
+              .price{
+                height: 44px;
+                line-height: 44px;
+                em{
+                  color: #f44;
+                  font-style: normal;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //滑块列表
+    .wg-slideList{
+      background: #fff;
+      padding: 0 .35rem;
+      color: #333;
+      font-family: 微软雅黑;
+      overflow: hidden;
+      .wg-tit{
+        height: 3.3rem;
+        padding: 1.07rem 0;
+        em{
+          line-height: 1.3rem;
+          font-weight: 700;
+          float: left;
+          height: 100%;
+          font-size: .3rem;
+          border-left: .01rem solid #fd0a0a;
+          padding-left: .2rem;
+          font-style: normal;
+        }
+        a{
+          font-weight: 100;
+          float: right;
+          font-size: .22rem;
+          color: #7e7e7e;
+          line-height: 1.6em;
+          background-size: .1rem .19rem;
+        }
+      }
+      .wg-recommend{
+        padding-bottom: .48rem;
+        .irs-list{
+          white-space: nowrap;
+          width: 105%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          .irs-item{
+            width: 8.5rem;
+            height: 13rem;
+            border: 1px solid #e7e7e7;
+            display: inline-block;
+            margin-right: .7rem;
+            position: relative;
+            overflow: hidden;
+            &.fillet{
+              border-radius: .4rem;
+            }
+            a{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            }
+            .irs-img{
+              width: 100%;
+              height: 8.3rem;
+              img{
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .irs-info{
+              width: 100%;
+              height: 1.38rem;
+              padding-top: 1.2rem;
+              .irsi-tit{
+                text-align: left;
+                padding: 0 .2rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: .28rem;
+              }
+              .irsi-price{
+                padding: 0 .2rem;
+                text-align: left;
+                margin-top: .5rem;
+                em{
+                  color: #fd0101;
+                  font-size: .28rem;
+                  margin-right: .23rem;
+                  font-style: normal;
+                }
+                span{
+                  font-size: .18rem;
+                  color:#ccc;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //图文导航
+    .wg-navigation{
+      ul{
+        overflow: hidden;
+      }
+      .item{
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 5px;
+        .title{
+          overflow: hidden;
+          font-weight: normal;
+          height: 33px;
+          line-height: 24px;
+          line-height: 24px;
+          font-size: 12px;
+        }
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

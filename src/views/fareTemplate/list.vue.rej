@@ -1,0 +1,6 @@
+diff a/src/views/fareTemplate/list.vue b/src/views/fareTemplate/list.vue	(rejected hunks)
+@@ -60,2 +60,2 @@ export default {
+-        this.api.Delete({ids:[item.id]}).then(res=>{
+-          this.$notify({ title: '删除成功', type: 'success'})
++        this.api.Delete({ ids: [item.id] }).then(res => {
++          this.$notify({ title: '删除成功', type: 'success' })
