@@ -10,7 +10,6 @@
         <img src="http://wechatapppro-1252524126.file.myqcloud.com/apprnDA0ZDw4581/image/6b6f783b035d71d24dfd5ab8dbfe8a90.png" data-sensors="登录_登录页-知识店铺_点击运营位banner" class="login-img">
       </div>
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
-
       <div class="title-container">
         <h3 class="title">密码登录</h3>
       </div>
@@ -54,7 +53,7 @@
         </el-form-item>
       </el-tooltip>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+      <el-button round :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
       <div style="position:relative">
         <div class="tips">
@@ -72,7 +71,10 @@
       </div>
     </el-form>
     </div>
-    
+    <!-- 尾部区域 -->
+    <div class="login-footer">
+
+    </div>
 
     <el-dialog title="Or connect with" :visible.sync="showDialog">
       Can not be simulated on local, so please combine you own business simulation! ! !
@@ -219,11 +221,6 @@ $bg:#283443;
 $light_gray:#fff;
 $cursor: #fff;
 
-@supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
-  .login-container .el-input input {
-    color: $cursor;
-  }
-}
 
 /* reset element-ui css */
 .login-container {
@@ -279,9 +276,7 @@ $cursor: #fff;
       -webkit-appearance: none;
       border-radius: 0px;
       padding: 12px 5px 12px 15px;
-      color: $light_gray;
       height: 47px;
-      caret-color: $cursor;
 
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
@@ -312,15 +307,6 @@ $light_gray:#eee;
   width: 100%;
   background-color: $bg;
   overflow: hidden;
-
-  .login-form {
-    position: relative;
-    width: 520px;
-    max-width: 100%;
-    padding: 160px 35px 0;
-    margin: 0 auto;
-    overflow: hidden;
-  }
 
   .tips {
     font-size: 14px;
