@@ -1,9 +1,18 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
+    <!-- 头部区域 -->
+    <div class="login-title">
+        MDS 系统模板
+    </div>
+    <!-- 中间区域 -->
+    <div class="login-wrapper">
+      <div class="login-bg">
+        <img src="http://wechatapppro-1252524126.file.myqcloud.com/apprnDA0ZDw4581/image/6b6f783b035d71d24dfd5ab8dbfe8a90.png" data-sensors="登录_登录页-知识店铺_点击运营位banner" class="login-img">
+      </div>
+      <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">密码登录</h3>
       </div>
 
       <el-form-item prop="username">
@@ -13,7 +22,7 @@
         <el-input
           ref="username"
           v-model="loginForm.username"
-          placeholder="Username"
+          placeholder="手机/账户"
           name="username"
           type="text"
           tabindex="1"
@@ -45,7 +54,7 @@
         </el-form-item>
       </el-tooltip>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
       <div style="position:relative">
         <div class="tips">
@@ -62,6 +71,8 @@
         </el-button>
       </div>
     </el-form>
+    </div>
+    
 
     <el-dialog title="Or connect with" :visible.sync="showDialog">
       Can not be simulated on local, so please combine you own business simulation! ! !
@@ -97,8 +108,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -216,6 +227,47 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  position: absolute;
+  min-height: 730px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .login-title{
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    z-index: 1;
+    width: 119px;
+    height: 34px;
+    cursor: pointer;
+  }
+  .login-wrapper{
+    width: 1000px;
+    height: 550px;
+    display: flex;
+    .login-bg{
+      position: relative;
+      width: 480px;
+      height: 100%;
+      .login-img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .login-form{
+      width: 520px;
+      height: 100%;
+      padding: 40px 70px;
+      background: white;
+      position: relative;
+    }
+  }
+
+
   .el-input {
     display: inline-block;
     height: 47px;
@@ -248,7 +300,10 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg:#2d3a4b;
+// $bg:#2d3a4b;
+// $dark_gray:#889aa4;
+// $light_gray:#eee;
+$bg:#f2f3f5;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
@@ -292,7 +347,6 @@ $light_gray:#eee;
 
     .title {
       font-size: 26px;
-      color: $light_gray;
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
