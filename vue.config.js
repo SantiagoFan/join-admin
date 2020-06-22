@@ -24,7 +24,7 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath:'', // 增加此项  修改默认"/" 防止git page 404
+  publicPath:'', // 增加此项  修改默认"/" 防止github page css和js 404
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
