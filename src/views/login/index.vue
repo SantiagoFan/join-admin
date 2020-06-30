@@ -32,14 +32,14 @@
       <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
         <el-form-item prop="password">
           <span class="svg-container">
-            <svg-icon icon-class="password" />
+            <svg-icon icon-class="user" />
           </span>
           <el-input
             :key="passwordType"
             ref="password"
             v-model="loginForm.password"
             :type="passwordType"
-            placeholder="Password"
+            placeholder="账户密码"
             name="password"
             tabindex="2"
             autocomplete="on"
@@ -55,21 +55,21 @@
 
       <el-button round :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
-      <div style="position:relative">
-        <div class="tips">
-          <span>Username : admin</span>
-          <span>Password : any</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right:18px;">Username : editor</span>
-          <span>Password : any</span>
-        </div>
+        <div style="position:relative">
+          <div class="tips">
+            <span>Username : admin</span>
+            <span>Password : any</span>
+          </div>
+          <div class="tips">
+            <span style="margin-right:18px;">Username : editor</span>
+            <span>Password : any</span>
+          </div>
 
-        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          Or connect with
-        </el-button>
-      </div>
-    </el-form>
+          <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
+            Or connect with
+          </el-button>
+        </div>
+      </el-form>
     </div>
     <!-- 尾部区域 -->
     <div class="login-footer">
@@ -96,14 +96,14 @@ export default {
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
+        callback(new Error('请输入用户名'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+        callback(new Error('密码不得少于6位'))
       } else {
         callback()
       }
@@ -216,10 +216,13 @@ export default {
 <style lang="scss">
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
-
-$bg:#283443;
-$light_gray:#fff;
 $cursor: #fff;
+// $bg:#2d3a4b;
+// $dark_gray:#889aa4;
+// $light_gray:#eee;
+$bg:#f2f3f5;
+$dark_gray:#889aa4;
+$light_gray:#eee;
 
 
 /* reset element-ui css */
@@ -286,27 +289,14 @@ $cursor: #fff;
   }
 
   .el-form-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: #454545;
   }
 }
-</style>
 
-<style lang="scss" scoped>
-// $bg:#2d3a4b;
-// $dark_gray:#889aa4;
-// $light_gray:#eee;
-$bg:#f2f3f5;
-$dark_gray:#889aa4;
-$light_gray:#eee;
 
 .login-container {
-  min-height: 100%;
-  width: 100%;
-  background-color: $bg;
-  overflow: hidden;
+  
 
   .tips {
     font-size: 14px;
