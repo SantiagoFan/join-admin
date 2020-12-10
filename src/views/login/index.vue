@@ -2,7 +2,7 @@
   <div class="login-container">
     <!-- 头部区域 -->
     <div class="login-title">
-        MDS 系统模板
+      MDS 系统模板
     </div>
     <!-- 中间区域 -->
     <div class="login-wrapper">
@@ -10,50 +10,50 @@
         <img src="http://wechatapppro-1252524126.file.myqcloud.com/apprnDA0ZDw4581/image/6b6f783b035d71d24dfd5ab8dbfe8a90.png" data-sensors="登录_登录页-知识店铺_点击运营位banner" class="login-img">
       </div>
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
-      <div class="title-container">
-        <h3 class="title">密码登录</h3>
-      </div>
+        <div class="title-container">
+          <h3 class="title">密码登录</h3>
+        </div>
 
-      <el-form-item prop="username">
-        <span class="svg-container">
-          <svg-icon icon-class="user" />
-        </span>
-        <el-input
-          ref="username"
-          v-model="loginForm.username"
-          placeholder="手机/账户"
-          name="username"
-          type="text"
-          tabindex="1"
-          autocomplete="on"
-        />
-      </el-form-item>
-
-      <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
-        <el-form-item prop="password">
+        <el-form-item prop="username">
           <span class="svg-container">
             <svg-icon icon-class="user" />
           </span>
           <el-input
-            :key="passwordType"
-            ref="password"
-            v-model="loginForm.password"
-            :type="passwordType"
-            placeholder="账户密码"
-            name="password"
-            tabindex="2"
+            ref="username"
+            v-model="loginForm.username"
+            placeholder="手机/账户"
+            name="username"
+            type="text"
+            tabindex="1"
             autocomplete="on"
-            @keyup.native="checkCapslock"
-            @blur="capsTooltip = false"
-            @keyup.enter.native="handleLogin"
           />
-          <span class="show-pwd" @click="showPwd">
-            <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
-          </span>
         </el-form-item>
-      </el-tooltip>
 
-      <el-button round :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+        <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+          <el-form-item prop="password">
+            <span class="svg-container">
+              <svg-icon icon-class="user" />
+            </span>
+            <el-input
+              :key="passwordType"
+              ref="password"
+              v-model="loginForm.password"
+              :type="passwordType"
+              placeholder="账户密码"
+              name="password"
+              tabindex="2"
+              autocomplete="on"
+              @keyup.native="checkCapslock"
+              @blur="capsTooltip = false"
+              @keyup.enter.native="handleLogin"
+            />
+            <span class="show-pwd" @click="showPwd">
+              <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+            </span>
+          </el-form-item>
+        </el-tooltip>
+
+        <el-button round :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
         <div style="position:relative">
           <div class="tips">
@@ -73,7 +73,7 @@
     </div>
     <!-- 尾部区域 -->
     <div class="login-footer">
-
+      <qrcode text="https://github.com/SantiagoFan/join-ui" />
     </div>
 
     <el-dialog title="Or connect with" :visible.sync="showDialog">
@@ -89,10 +89,11 @@
 <script>
 import { validUsername } from '@/utils/validate'
 import SocialSign from './components/SocialSignin'
+import { Qrcode } from 'join-ui'
 
 export default {
   name: 'Login',
-  components: { SocialSign },
+  components: { SocialSign, Qrcode },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -224,7 +225,6 @@ $bg:#f2f3f5;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
-
 /* reset element-ui css */
 .login-container {
   position: absolute;
@@ -267,7 +267,6 @@ $light_gray:#eee;
     }
   }
 
-
   .el-input {
     display: inline-block;
     height: 47px;
@@ -281,10 +280,10 @@ $light_gray:#eee;
       padding: 12px 5px 12px 15px;
       height: 47px;
 
-      &:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px $bg inset !important;
-        -webkit-text-fill-color: $cursor !important;
-      }
+      // &:-webkit-autofill {
+      //   box-shadow: 0 0 0px 1000px $bg inset !important;
+      //   -webkit-text-fill-color: $cursor !important;
+      // }
     }
   }
 
@@ -294,9 +293,7 @@ $light_gray:#eee;
   }
 }
 
-
 .login-container {
-  
 
   .tips {
     font-size: 14px;

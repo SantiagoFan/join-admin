@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "axios": "0.18.1",
+    "babel-plugin-component": "^1.1.1",
     "clipboard": "2.0.4",
     "codemirror": "5.45.0",
     "driver.js": "0.9.5",
@@ -53,6 +54,7 @@
     "element-ui": "2.13.1",
     "file-saver": "2.0.1",
     "fuse.js": "3.4.4",
+    "join-ui": "^0.1.30",
     "js-cookie": "2.2.0",
     "jsonlint": "1.6.3",
     "jszip": "3.2.1",
